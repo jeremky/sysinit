@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# Catch failures anywhere in a pipe (e.g. curl | sh)
+# Catch failures anywhere in a pipe
 set -o pipefail
+echo
 
 # Colored messages
 error() { echo -e "\033[0;31m❯ $*\033[0m"; }
@@ -174,11 +175,11 @@ init_passwd() {
 
 enable_unattended() {
   require_distro debian || return 1
+  warning "Enabling unattended upgrades"
   pkg_install unattended-upgrades || {
     error "Error while installing unattended-upgrades"
     return 1
   }
-  warning "Enabling unattended upgrades"
   local file=/etc/apt/apt.conf.d/20auto-upgrades
   printf '%s\n' \
     'APT::Periodic::Update-Package-Lists "1";' \
