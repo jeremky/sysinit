@@ -57,7 +57,6 @@ pkg_install() {
   esac
 }
 
-# Functions
 install_packages() {
   warning "Updating packages"
   pkg_update || {
@@ -144,6 +143,16 @@ install_claude() {
     return 1
   }
   message "claude installation complete"
+  echo
+}
+
+install_webi() {
+  warning "Installing webi"
+  curl -fsSL https://webi.sh/webi | sh || {
+    error "Error while installing webi"
+    return 1
+  }
+  message "webi installation complete. Restart your shell to update PATH"
   echo
 }
 

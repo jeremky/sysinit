@@ -16,6 +16,7 @@ treated as `debian`). Its configuration is loaded from `config/<distro>/`.
 | `install_npm`        | installs Node.js and the global npm packages in `npm.cfg` | debian, fedora, solus |
 | `install_herdr`      | installs the herdr multiplexer for the current user       | all                   |
 | `install_claude`     | installs Claude Code for the current user                 | all                   |
+| `install_webi`       | installs the webi package manager for the current user    | all                   |
 | `install_hytale`     | downloads and installs the Hytale flatpak                 | all                   |
 | `init_passwd`        | changes the password of the current user                  | steamos               |
 | `enable_unattended`  | enables unattended upgrades                               | debian                |
