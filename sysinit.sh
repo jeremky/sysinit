@@ -155,21 +155,6 @@ install_webi() {
   echo
 }
 
-install_hytale() {
-  warning "Installing Hytale"
-  local file=/tmp/hytale-launcher-latest.flatpak
-  wget -O "$file" https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.flatpak || {
-    error "Error while downloading Hytale"
-    return 1
-  }
-  sudo flatpak install -y --system "$file" || {
-    error "Error while installing Hytale"
-    return 1
-  }
-  message "Hytale installation complete"
-  echo
-}
-
 init_passwd() {
   require_distro steamos || return 1
   warning "Changing password for $USER"

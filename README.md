@@ -17,7 +17,6 @@ treated as `debian`). Its configuration is loaded from `config/<distro>/`.
 | `install_herdr`      | installs the herdr multiplexer for the current user       | all                   |
 | `install_claude`     | installs Claude Code for the current user                 | all                   |
 | `install_webi`       | installs the webi package manager for the current user    | all                   |
-| `install_hytale`     | downloads and installs the Hytale flatpak                 | all                   |
 | `init_passwd`        | changes the password of the current user                  | steamos               |
 | `enable_unattended`  | enables unattended upgrades                               | debian                |
 | `disable_sudofile`   | stops creating `~/.sudo_as_admin_successful`              | debian                |
