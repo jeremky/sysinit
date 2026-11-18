@@ -2,7 +2,6 @@
 
 # Catch failures anywhere in a pipe
 set -o pipefail
-echo
 
 # Colored messages
 error() { echo -e "\033[0;31m❯ $*\033[0m"; }
@@ -292,6 +291,7 @@ if [[ "$EUID" -eq 0 ]]; then
   exit 1
 fi
 if [[ "$distro" != steamos ]]; then
+  echo
   sudo -v || {
     error "sudo privileges required"
     exit 1
