@@ -149,14 +149,14 @@ install_herdr-app() {
   git clone --depth 1 https://github.com/theverything/herdr-catppuccin "$tmp/herdr-catppuccin" &&
     mkdir -p ~/.config/herdr-app &&
     (cd "$tmp/herdr-catppuccin" && cp -Rn layouts themes mods ~/.config/herdr-app/) &&
-    herdr-app "do" layout.switch --name catppuccin
+    sed -i 's/"dark": "catppuccin-macchiato"/"dark": "catppuccin-mocha"/' ~/.config/herdr-app/layouts/catppuccin.json
   local rc=$?
   rm -rf "$tmp"
   ((rc == 0)) || {
     error "Error while installing catppuccin theme"
     return 1
   }
-  message "catppuccin theme installed"
+  message "Catppuccin theme installed. Press ctrl-shift-l to apply"
   echo
 }
 
