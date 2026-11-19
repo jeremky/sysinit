@@ -127,11 +127,21 @@ install_npm() {
 
 install_herdr() {
   warning "Installing herdr"
-  curl -fsSL https://releases.herdr.dev/app/install.sh | sh || {
+  curl -fsSL https://herdr.dev/install.sh | sh || {
     error "Error while installing herdr"
     return 1
   }
   message "herdr installation complete"
+  echo
+}
+
+install_herdr-app() {
+  warning "Installing herdr-app"
+  curl -fsSL https://releases.herdr.dev/app/install.sh | sh || {
+    error "Error while installing herdr-app"
+    return 1
+  }
+message "herdr-app installation complete"
   echo
 }
 
