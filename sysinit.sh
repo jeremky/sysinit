@@ -143,21 +143,6 @@ install_herdr-app() {
   }
   message "herdr-app installation complete"
   echo
-  warning "Installing catppuccin theme for herdr-app"
-  local tmp
-  tmp=$(mktemp -d) || return 1
-  git clone --depth 1 https://github.com/theverything/herdr-catppuccin "$tmp/herdr-catppuccin" &&
-    mkdir -p ~/.config/herdr-app &&
-    (cd "$tmp/herdr-catppuccin" && cp -Rn layouts themes mods ~/.config/herdr-app/) &&
-    sed -i 's/"dark": "catppuccin-macchiato"/"dark": "catppuccin-mocha"/' ~/.config/herdr-app/layouts/catppuccin.json
-  local rc=$?
-  rm -rf "$tmp"
-  ((rc == 0)) || {
-    error "Error while installing catppuccin theme"
-    return 1
-  }
-  message "Catppuccin theme installed. Press ctrl-shift-l to apply"
-  echo
 }
 
 install_claude() {
