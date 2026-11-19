@@ -127,7 +127,7 @@ install_npm() {
 
 install_herdr() {
   warning "Installing herdr"
-  curl -fsSL https://herdr.dev/install.sh | sh || {
+  curl -fsSL https://releases.herdr.dev/app/install.sh | sh || {
     error "Error while installing herdr"
     return 1
   }
@@ -276,11 +276,11 @@ if [[ "$EUID" -eq 0 ]]; then
   exit 1
 fi
 if [[ "$distro" != steamos ]]; then
-  echo
   sudo -v || {
     error "sudo privileges required"
     exit 1
   }
+  echo
 fi
 
 # Execution
