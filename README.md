@@ -8,20 +8,21 @@ treated as `debian`). Its configuration is loaded from `config/<distro>/`.
 
 ## Features
 
-| Function             | Description                                               | Distros               |
-| -------------------- | --------------------------------------------------------- | --------------------- |
-| `install_packages`   | updates the system and installs `packages.cfg`            | debian, fedora, solus |
-| `enable_flathub`     | installs flatpak if needed and adds Flathub               | all                   |
-| `install_flatpaks`   | installs the apps listed in `flatpaks.cfg`                | all                   |
-| `install_npm`        | installs Node.js and the global npm packages in `npm.cfg` | debian, fedora, solus |
-| `install_herdr`      | installs the herdr multiplexer for the current user       | all                   |
-| `install_claude`     | installs Claude Code for the current user                 | all                   |
-| `install_webi`       | installs the webi package manager for the current user    | all                   |
-| `init_passwd`        | changes the password of the current user                  | steamos               |
-| `enable_unattended`  | enables unattended upgrades                               | debian                |
-| `disable_sudofile`   | stops creating `~/.sudo_as_admin_successful`              | debian                |
-| `configure_ufw`      | installs and enables the ufw firewall                     | debian                |
-| `configure_sshd`     | hardens the OpenSSH server                                | all                   |
+| Function            | Description                                               | Distros               |
+| ------------------- | --------------------------------------------------------- | --------------------- |
+| `install_packages`  | updates the system and installs `packages.cfg`            | debian, fedora, solus |
+| `enable_flathub`    | installs flatpak if needed and adds Flathub               | all                   |
+| `install_flatpaks`  | installs the apps listed in `flatpaks.cfg`                | all                   |
+| `install_npm`       | installs Node.js and the global npm packages in `npm.cfg` | debian, fedora, solus |
+| `install_herdr`     | installs the herdr multiplexer for the current user       | all                   |
+| `install_herdr-app` | installs the herdr desktop app for the current user       | all                   |
+| `install_claude`    | installs Claude Code for the current user                 | all                   |
+| `install_webi`      | installs the webi package manager for the current user    | all                   |
+| `init_passwd`       | changes the password of the current user                  | steamos               |
+| `enable_unattended` | enables unattended upgrades                               | debian                |
+| `disable_sudofile`  | stops creating `~/.sudo_as_admin_successful`              | debian                |
+| `configure_ufw`     | installs and enables the ufw firewall                     | debian                |
+| `configure_sshd`    | hardens the OpenSSH server                                | all                   |
 
 > [!IMPORTANT]
 > `configure_sshd` writes its config to `/etc/ssh/sshd_config.d/<user>.conf`.
