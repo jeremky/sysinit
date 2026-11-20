@@ -19,7 +19,6 @@ treated as `debian`). Its configuration is loaded from `config/<distro>/`.
 | `install_webi`      | installs the webi package manager for the current user    | all                   |
 | `init_passwd`       | changes the password of the current user                  | steamos               |
 | `enable_unattended` | enables unattended upgrades                               | debian                |
-| `disable_sudofile`  | stops creating `~/.sudo_as_admin_successful`              | debian                |
 | `configure_ufw`     | installs and enables the ufw firewall                     | debian                |
 | `configure_sshd`    | hardens the OpenSSH server                                | all                   |
 

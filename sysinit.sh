@@ -184,22 +184,6 @@ enable_unattended() {
   echo
 }
 
-disable_sudofile() {
-  require_distro debian || return 1
-  warning "Disabling the .sudo_as_admin_successful file"
-  local file=/etc/sudoers.d/010_sudofile
-  echo "Defaults !admin_flag" | sudo tee "$file" || {
-    error "Failed to write $file"
-    return 1
-  }
-  sudo chmod 440 "$file" || {
-    error "Failed to chmod $file"
-    return 1
-  }
-  message ".sudo_as_admin_successful file disabled"
-  echo
-}
-
 configure_ufw() {
   require_distro debian || return 1
   pkg_install ufw || return 1
